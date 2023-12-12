@@ -14,3 +14,20 @@ The following questions are what this analysis seeks to answer:
 - Total Cases vs Total Deaths in Nigeria
 
 
+SELECT*
+FROM PortfolioProject..CovidDeaths
+WHERE continent is not null 
+ORDER BY 3,4
+
+
+--SELECT*
+--FROM PortfolioProject..CovidVaccinations
+--ORDER BY 3,4
+
+-- Let's select the data that we are going to be using
+
+SELECT location, date, total_cases, new_cases, total_deaths, population
+FROM PortfolioProject..CovidDeaths
+WHERE continent is not null 
+ORDER BY 1,2
+
