@@ -71,3 +71,16 @@ WHERE continent is not null
 GROUP BY location
 ORDER BY TotalDeathsCount DESC	
 
+-- BREAKING IT DOWN BY CONTINENT
+
+-- Showing contintents with the highest death count per population
+
+SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathsCount
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria'
+WHERE continent is null 
+GROUP BY location
+ORDER BY TotalDeathsCount DESC	
+
+
+
