@@ -93,3 +93,28 @@ Group by continent
 order by TotalDeathCount desc
 
 
+-- GLOBAL NUMBERS
+
+
+SELECT SUM(new_cases) AS Total_cases, SUM(cast(new_deaths as int)) AS Total_Deaths, SUM(cast(new_deaths as int))/ SUM(new_cases)*100 AS DeathsPercentage
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria'
+WHERE continent is not null 
+--GROUP BY date
+ORDER BY 1,2
+
+
+
+-- Total Population vs Vaccinations
+-- Shows Percentage of Population that has recieved at least one Covid Vaccine
+
+SELECT dea.continent, dea.location, dea.date,dea.population, vac.new_vaccinations, 
+SUM(CONVERT(int,vac.new_vaccinations)) OVER (partition by dea.location order by dea.location, dea.date) AS RollingPeopleVaccinated
+FROM PortfolioProject..CovidDeaths dea
+JOIN PortfolioProject..CovidVaccinations vac
+ON dea.location = vac.location
+and dea.date = vac.date
+WHERE dea.continent is not null
+ORDER BY 2,3
+
+
