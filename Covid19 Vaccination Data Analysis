@@ -196,3 +196,14 @@ WHERE continent is not null
 --ORDER BY 1,2
 
 
+--- VIEW 3 Deaths By Continent
+
+CREATE VIEW Death_by_Continent AS
+Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
+From PortfolioProject..CovidDeaths
+--Where location like '%Nigeria%''
+Where continent is not null 
+Group by continent
+--order by TotalDeathCount desc
+
+
