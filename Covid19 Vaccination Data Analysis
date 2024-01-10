@@ -207,3 +207,18 @@ Group by continent
 --order by TotalDeathCount desc
 
 
+--VIEW 4 contintents with the highest death count per population
+
+CREATE VIEW CountryWithHighestDeaths AS
+SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathsCount
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria'
+WHERE continent is not null 
+GROUP BY location
+--ORDER BY TotalDeathsCount DESC	
+
+SELECT*
+FROM CountryWithHighestDeaths
+
+
+-
