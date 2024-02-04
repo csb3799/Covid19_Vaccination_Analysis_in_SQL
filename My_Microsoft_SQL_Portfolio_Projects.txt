@@ -46,3 +46,12 @@ GROUP BY location, population
 ORDER BY PercentPopulationInfected DESC	
 
 
+-- Countries with Highest Death Count per Population
+
+SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathsCount
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria'
+WHERE continent is not null 
+GROUP BY location
+ORDER BY TotalDeathsCount DESC	
+
