@@ -67,3 +67,13 @@ GROUP BY location
 ORDER BY TotalDeathsCount DESC	
 
 
+-- Showing contintents with the highest death count per population
+
+Select continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
+From PortfolioProject..CovidDeaths
+--Where location like '%Nigeria%''
+Where continent is not null 
+Group by continent
+order by TotalDeathCount desc
+
+
