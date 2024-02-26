@@ -168,3 +168,15 @@ SELECT*
 FROM PercentPopulationVaccinated
 
 
+-- View 2 Global Deaths
+
+CREATE VIEW GlobalDeaths AS
+SELECT SUM(new_cases) AS Total_cases, SUM(cast(new_deaths as int)) AS Total_Deaths, 
+SUM(cast(new_deaths as int))/ SUM(new_cases)*100 AS DeathsPercentage
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria'
+WHERE continent is not null 
+--GROUP BY date
+--ORDER BY 1,2
+
+
