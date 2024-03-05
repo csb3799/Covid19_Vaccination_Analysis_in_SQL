@@ -204,3 +204,18 @@ GROUP BY location
 SELECT*
 FROM CountryWithHighestDeaths
 
+
+---VIEW 5 -- Countries with Highest Infection Rate compared to Population
+
+CREATE VIEW HighestInfectionRate AS
+SELECT location, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS PercentPopulationInfected
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria'
+WHERE continent is not null 
+GROUP BY location, population
+--ORDER BY PercentPopulationInfected DESC	
+
+SELECT*
+FROM HighestInfectionRate
+
+
