@@ -219,3 +219,17 @@ SELECT*
 FROM HighestInfectionRate
 
 
+
+-- VIEW 6 Total cases & population percentage infected
+
+
+CREATE VIEW TotalCasesPercentageInfected AS
+SELECT location, date,population total_cases, (total_cases/population)*100 AS PercentPopulationInfected
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria' and continent is not null 
+--ORDER BY 1,2
+
+SELECT* 
+FROM TotalCasesPercentageInfected
+
+
