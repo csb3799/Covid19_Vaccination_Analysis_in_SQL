@@ -233,3 +233,16 @@ SELECT*
 FROM TotalCasesPercentageInfected
 
 
+
+-- VIEW 7 Total Cases vs Total Deaths in Nigeria
+
+CREATE VIEW TotalCasesvsTotalDeaths AS
+SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathsPercentage
+FROM PortfolioProject..CovidDeaths
+where location like '%Nigeria' 
+--and continent is not null
+--ORDER BY 1,2
+
+SELECT*
+FROM TotalCasesvsTotalDeaths
+
