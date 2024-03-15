@@ -246,3 +246,14 @@ where location like '%Nigeria'
 SELECT*
 FROM TotalCasesvsTotalDeaths
 
+
+-- VIEW 8 Total Cases vs Total Deaths
+
+CREATE VIEW CasesvsDeaths AS
+SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathsPercentage
+FROM PortfolioProject..CovidDeaths
+--where location like '%Nigeria' and continent is not null
+--ORDER BY 1,2
+
+SELECT*
+FROM CasesvsDeaths
