@@ -257,3 +257,4 @@ FROM PortfolioProject..CovidDeaths
 
 SELECT*
 FROM CasesvsDeaths
+
