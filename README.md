@@ -71,3 +71,59 @@ ORDER BY 1,2
 
 
 
+**Countries with Highest Infection Rate compared to Population**
+```SQL
+-- Countries with Highest Infection Rate compared to Population
+
+SELECT location, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS PercentPopulationInfected
+FROM CovidDeaths
+WHERE continent is not null 
+GROUP BY location, population
+ORDER BY PercentPopulationInfected DESC
+```
+
+
+## Countries with Highest Infection Rate Compared to Population
+
+- The highest infection rates relative to population occurred in countries with smaller populations. Andorra had the highest infection rate, where more than 17% of the population contracted Covid-19. This demonstrates the disproportionate impact the virus had on smaller, densely populated countries.
+
+- Findings: Smaller nations, particularly in Europe, were hit hard by the pandemic, as they faced significant infection rates, unlike larger countries such as Nigeria.
+
+
+## Countries with Highest Death Count per Population
+```SQL
+-- Countries with Highest Death Count per Population
+
+SELECT location, MAX(cast(total_deaths as int)) AS TotalDeathsCount
+FROM CovidDeaths
+WHERE continent is not null 
+GROUP BY location
+ORDER BY TotalDeathsCount DESC
+```
+
+
+## Countries with Highest Death Count per Population
+
+- The United States recorded the highest total number of Covid-19 deaths, reflecting both its large population and the significant spread of the virus within its borders.
+
+- Findings: Although the US had a relatively advanced healthcare system, the sheer volume of cases overwhelmed the system, leading to a high number of fatalities.
+
+
+## Breaking it down by Continent
+```SQL
+-- Showing contintents with the highest death count per population
+
+SELECT continent, MAX(cast(Total_deaths as int)) as TotalDeathCount
+FROM CovidDeaths
+WHERE continent IS NOT NULL 
+GROUP BY continent
+ORDER BY TotalDeathCount DESC
+```
+
+
+## Continents with the Highest Death Count per Population
+
+- North America had the highest death count, with 576,232 deaths, followed by South America with 403,783 deaths. This shows the severe impact Covid-19 had on these continents, especially in densely populated areas.
+
+- Findings: North and South America had the highest death tolls, largely due to delayed containment measures, overwhelmed healthcare systems, and perhaps differences in population health and preparedness.
+
