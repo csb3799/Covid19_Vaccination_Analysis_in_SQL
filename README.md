@@ -127,3 +127,24 @@ ORDER BY TotalDeathCount DESC
 
 - Findings: North and South America had the highest death tolls, largely due to delayed containment measures, overwhelmed healthcare systems, and perhaps differences in population health and preparedness.
 
+
+## Global Covid-19 Numbers
+
+```SQL
+-- Percentage of deaths by total cases
+
+SELECT SUM(CAST(new_cases AS INT)) AS Total_cases, 
+SUM(CAST(new_deaths AS INT)) AS Total_Deaths, 
+SUM(CAST(new_deaths AS INT))/ SUM(new_cases )*100 AS DeathsPercentage
+FROM CovidDeaths
+WHERE continent IS NOT NULL 
+ORDER BY 1,2
+```   
+
+
+## Global Covid-19 Numbers: Death Percentage
+
+- The global death rate was calculated as 2.11%, indicating that globally, about 2 in every 100 people who contracted Covid-19 succumbed to the virus. This reflects the overall impact of the pandemic.
+
+- Findings: The global death rate provides a stark reminder of the severity of the pandemic. However, regional differences in healthcare capacity, early interventions, and government actions led to significant variations in death rates across continents.
+
