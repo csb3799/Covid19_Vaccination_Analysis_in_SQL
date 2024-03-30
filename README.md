@@ -148,3 +148,22 @@ ORDER BY 1,2
 
 - Findings: The global death rate provides a stark reminder of the severity of the pandemic. However, regional differences in healthcare capacity, early interventions, and government actions led to significant variations in death rates across continents.
 
+
+
+## Total Population vs Vaccinations
+```SQL
+-- Shows Percentage of Population that has recieved at least one Covid Vaccine
+
+WITH popvsvac (Continent, Location, Date, Population, New_vaccinations, RollingPeopleVaccinated) AS  
+(
+SELECT dea.continent, dea.location, dea.date,dea.population, vac.new_vaccinations, 
+SUM(CONVERT(int,vac.new_vaccinations)) OVER (partition BY dea.location ORDER BY dea.location, dea.date) AS RollingPeopleVaccinated
+FROM CovidDeaths dea
+JOIN CovidVaccinations vac
+ON dea.location = vac.location
+and dea.date = vac.date
+WHERE dea.continent IS NOT NULL
+)
+SELECT*, (RollingPeopleVaccinated/Population)*100 AS PercentRollingPeopleVaccinated
+FROM popvsvac
+```
