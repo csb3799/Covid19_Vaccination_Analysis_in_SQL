@@ -167,3 +167,34 @@ WHERE dea.continent IS NOT NULL
 SELECT*, (RollingPeopleVaccinated/Population)*100 AS PercentRollingPeopleVaccinated
 FROM popvsvac
 ```
+
+
+## Vaccination Rollout: Population vs. Vaccination Rates
+
+- A comparison between total population and vaccination data shows the percentage of the population that had received at least one vaccine dose. In several countries, the percentage of people vaccinated increased over time. Countries that vaccinated early and aggressively, such as the United States and European nations, saw a slower rise in new cases as vaccines helped control the spread of the virus.
+
+- Findings: Vaccination rollout played a critical role in slowing down the spread of Covid-19. However, many developing nations, including Nigeria, lagged behind in terms of vaccination coverage, which may have prolonged their exposure to the virus.
+
+
+
+
+## Global Overview
+- Total Cases: 150,574,977
+- Total Deaths: 3,180,206
+- Death Percentage: 2.11%
+
+The pandemic’s global reach has been devastating, with over 150 million total cases reported worldwide and more than 3 million deaths, resulting in a death percentage of 2.11%. The spread varied significantly across regions, with Europe, North America, and South America showing higher mortality rates compared to other continents.
+
+
+
+## Percent Population Infected per Country
+
+The infection rates vary across countries, with some experiencing more significant impacts relative to their population size. The top countries with the highest infection rates include:
+
+- United States: 19.11%
+- United Kingdom: 14.93%
+- India: 8.33%
+
+These numbers indicate that nearly 1 in 5 individuals in these countries contracted the virus during the pandemic, revealing the heavy burden placed on their healthcare systems.
+
+
