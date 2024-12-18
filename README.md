@@ -232,6 +232,7 @@ These numbers indicate that nearly 1 in 5 individuals in these countries contrac
 
 
 
+
 By implementing these recommendations, countries will be better positioned to handle future pandemics, reduce fatalities, and minimize disruptions to global health systems. The Covid-19 pandemic has underscored the importance of proactive, unified, and well-prepared responses to global health threats.
 
 
