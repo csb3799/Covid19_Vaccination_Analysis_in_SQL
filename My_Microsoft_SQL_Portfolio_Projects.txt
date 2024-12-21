@@ -247,6 +247,7 @@ SELECT*
 FROM TotalCasesvsTotalDeaths
 
 
+
 -- VIEW 8 Total Cases vs Total Deaths
 
 CREATE VIEW CasesvsDeaths AS
