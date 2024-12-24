@@ -256,6 +256,7 @@ FROM PortfolioProject..CovidDeaths
 --where location like '%Nigeria' and continent is not null
 --ORDER BY 1,2
 
+
 SELECT*
 FROM CasesvsDeaths
 
